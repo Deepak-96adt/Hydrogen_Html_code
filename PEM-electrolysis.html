@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/main.css" />
+    <script defer src="./assets/main.js"></script>
+    <script defer src="./assets/alpinejs.js"></script>
+  </head>
+  <body>
+    <header class="relative shadow-lg h-20 left-0 w-full z-[100] bg-white" x-data="{ isOpen: false }">
+      <div class="w-[95%] max-w-[90%] mx-auto flex justify-between items-center h-full">
+        <a href="./index.html">
+          <img src="./assets/logo2.png" alt="logo" class="h-[50px]" />
+        </a>
+        <div class="flex items-center gap-2 sm:gap-4">
+          <button @click="isOpen = !isOpen" class="size-8 sm:size-10 border-[0.67px] border-[#05252433] rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-neutral-100">
+            <img src="./assets/icon1.png" alt="" class="w-4 sm:w-5" />
+          </button>
+          <a href="./index.html" class="size-8 sm:size-10 border-[0.67px] border-[#05252433] rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-neutral-100">
+            <img src="./assets/icon2.png" alt="" class="w-4 sm:w-5" />
+          </a>
+        </div>
+      </div>
+      <div id="headerAccordion" x-show="isOpen" @click.outside="isOpen = false" class="absolute bg-white z-[100] top-20 left-0 w-full pt-5 pb-32">
+        <div
+          class="w-[95%] max-w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 lg:gap-y-5"
+          x-data="{ 
+          activeAccordion: null,
+          items: [
+            {
+              title: 'Hydrogen Basics',
+              content: [
+                { text: 'Introduction to Hydrogen', url: 'javascript:void(0)' },
+                { text: 'Hydrogen as Fuel', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Categories of Hydrogen based on production',
+              content: [
+                { text: 'Grey Hydrogen', url: 'javascript:void(0)' },
+                { text: 'Blue Hydrogen', url: 'javascript:void(0)' },
+                { text: 'Green Hydrogen', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen Safety', 
+              content: [
+                { text: 'Flammability and Explosivity', url: 'javascript:void(0)' },
+                { text: 'Leakage and Detection', url: 'javascript:void(0)' },
+                { text: 'Material Compatibility', url: 'javascript:void(0)' },
+                { text: 'Handling and Transport', url: 'javascript:void(0)' },
+                { text: 'Education and Awareness', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen Generation Methodologies',
+              content: [
+                { text: 'Steam Methane Reforming', url: 'javascript:void(0)' },
+                { text: 'Electrolysis of Water', url: 'javascript:void(0)' },
+                { text: 'Methanol Reforming', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen Generation through Electrolysis',
+              content: [
+                { text: 'Alkaline Electrolysis', url: 'javascript:void(0)' },
+                { text: 'PEM (Proton Exchange Membrane) Electrolysis', url: './PEM-electrolysis.html' }
+              ]
+            },
+            {
+              title: 'Hydrogen Storage',
+              content: [
+                { text: 'Geological Hydrogen Storage', url: 'javascript:void(0)' },
+                { text: 'Compressed Hydrogen', url: 'javascript:void(0)' },
+                { text: 'Liquid Hydrogen', url: 'javascript:void(0)' },
+                { text: 'Material based Hydrogen Storage', url: 'javascript:void(0)' },
+                { text: 'Hydrogen Storage in Ammonia', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen Distribution',
+              content: [
+                { text: 'Hydrogen Pipelines', url: 'javascript:void(0)' },
+                { text: 'Hydrogen Tankers', url: 'javascript:void(0)' },
+                { text: 'Hydrogen Refueling Stations', url: 'javascript:void(0)' },
+                { text: 'Ammonia as a Hydrogen Carrier', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Fuel Cell Fundamentals',
+              content: [
+                { text: 'Introduction to Fuel Cell', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Categories of Fuel Cell',
+              content: [
+                { text: 'Alkaline Fuel Cell', url: 'javascript:void(0)' },
+                { text: 'PEM (Proton Exchange Membrane) Fuel Cell', url: 'javascript:void(0)' },
+                { text: 'Microbial Fuel Cell', url: 'javascript:void(0)' },
+                { text: 'Phosphoric Acid Fuel Cells (PAFC)', url: 'javascript:void(0)' },
+                { text: 'Molten Carbonate Fuel Cells (MCFC)', url: 'javascript:void(0)' },
+                { text: 'Solid Oxide Fuel Cells (SOFC)', url: 'javascript:void(0)' },
+                { text: 'Direct Methanol Fuel Cells (DMFC)', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Advanced Hydrogen Fuel Cell Experiments',
+              content: [
+                { text: 'Test the fuel cell at different load condition', url: 'javascript:void(0)' },
+                { text: 'Study of IV characteristics of fuel cell', url: 'javascript:void(0)' },
+                { text: 'Study of the Measurement of Fuel Cell Efficiency', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen industrial Application',
+              content: [
+                { text: 'Ammonia Production', url: 'javascript:void(0)' },
+                { text: 'Methanol Production', url: 'javascript:void(0)' },
+                { text: 'Steelmaking', url: 'javascript:void(0)' },
+                { text: 'Concrete Production', url: 'javascript:void(0)' },
+                { text: 'Oil Refining', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen Combustion Engine',
+              content: [
+                { text: 'Introduction to Hydrogen Engines', url: 'javascript:void(0)' },
+                { text: 'Engine Performance and Efficiency', url: 'javascript:void(0)' }
+              ]
+            },
+            {
+              title: 'Hydrogen Mobility and Transportation Applications',
+              content: [
+                { text: 'Fuel Cell Buses', url: 'javascript:void(0)' },
+                { text: 'Material Handling', url: 'javascript:void(0)' },
+                { text: 'Mining trucks', url: 'javascript:void(0)' },
+                { text: 'Aviation', url: 'javascript:void(0)' },
+                { text: 'Rail Transportation', url: 'javascript:void(0)' },
+                { text: 'Marine Transportation', url: 'javascript:void(0)' }
+              ]
+            }
+          ],
+          init() {
+            document.addEventListener('click', (e) => {
+              // Check if click is outside the accordion container
+              if (!this.$el.contains(e.target)) {
+                this.activeAccordion = null;
+              }
+            })
+          }
+        }"
+          @click.outside="activeAccordion = null"
+        >
+          <template x-for="(item, index) in items" :key="index">
+            <div class="relative font-inter antialiased text-sm lg:text-base">
+              <div :class="activeAccordion === index ? 'bg-[#f5f5f5] rounded-t-[10px]' : 'bg-white rounded-[10px]'">
+                <h2 class="px-[15px] hover:bg-[#f5f5f5] hover:rounded-[10px] group">
+                  <button
+                    :id="'faqs-title-' + index"
+                    type="button"
+                    class="flex items-center justify-between w-full text-left font-semibold py-[15px] gap-4 border-b-[1px] border-[#DADADA00]"
+                    :class="activeAccordion === index ? 'border-[#DADADA]' : ''"
+                    @click="activeAccordion = activeAccordion === index ? null : index"
+                    :aria-expanded="activeAccordion === index"
+                    :aria-controls="'faqs-text-' + index"
+                  >
+                    <p class="line-height-[20px] font-medium flex-1 pr-2 line-clamp-2" x-text="item.title"></p>
+                    <div class="size-[30px] group-hover:bg-white shrink-0 rounded-full flex justify-center items-center cursor-pointer" :class="activeAccordion === index ? 'bg-white' : 'bg-[#f5f5f5]'">
+                      <img src="./assets/icon3.png" alt="" class="transition-all duration-700" :class="activeAccordion === index ? 'rotate-180' : ''" />
+                    </div>
+                  </button>
+                </h2>
+                <div :id="'faqs-text-' + index" role="region" :aria-labelledby="'faqs-title-' + index" class="p-[15px] w-full absolute z-[1] bg-[#f5f5f5] rounded-b-[10px] text-slate-600 overflow-hidden transition-all duration-300 ease-in-out" :class="activeAccordion === index ? 'block' : 'hidden'">
+                  <div class="overflow-hidden flex flex-col gap-3.5">
+                    <template x-for="line in item.content" :key="line.text">
+                      <a :href="line.url" class="hover:text-blue-600 transition-colors duration-300" x-text="line.text"></a>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </header>
+
+    <div class="bg-[#f5f5f5] min-h-screen">
+      <div class="w-[95%] max-w-[90%] space-y-[30px] mx-auto py-[30px]">
+        <div class="flex items-center gap-3.5">
+          <a href="./index.html" class="bg-white rounded-full size-[30px] flex items-center justify-center border-[0.5px] border-[#05252433]">
+            <img src="./assets/icon5.png" alt="" class="" />
+          </a>
+          <h3 class="text-base sm:text-xl md:text-2xl line-height-[32px] font-medium">PEM (Proton Exchange Membrane) Electrolysis</h3>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-5">
+          <img src="./assets/img1.png" alt="" class="mx-auto shadow-lg rounded-2xl" />
+          <div class="flex-col flex items-start space-y-3.5 lg:space-y-[26px] justify-center">
+            <h3 class="text-[22px] md:text-3xl lg:text-[32px] line-height-[32px] font-semibold">Overview</h3>
+            <p class="text-sm lg:text-base xl:text-lg line-height-[26px] font-normal">
+              Proton Exchange Membrane (PEM) electrolysis is a method for producing hydrogen by splitting water into hydrogen and oxygen using electricity. In this process, water is passed through a proton exchange membrane, which acts as an electrolyte and allows only protons (hydrogen ions) to pass through. When an electric current is applied, water molecules are split at the electrodes;
+              hydrogen gas forms at the cathode (negative electrode), while oxygen gas forms at the anode (positive electrode). PEM electrolysis is known for its high efficiency and compact design, making it suitable for a variety of applications, including fuel cells and clean energy systems.
+            </p>
+            <a href="./animation.html" class="text-xs sm:text-sm lg:text-base xl:text-lg line-height-[26px] font-normal bg-[#0177fb] text-white rounded-full px-4 sm:px- py-2 sm:py-2.5 active:translate-y-1 active:shadow-none transition-all duration-75" style="box-shadow: 0px 4px 0px 0px #0155b3"> Simulation </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

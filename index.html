@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/main.css" />
+    <script defer src="./assets/main.js"></script>
+    <script defer src="./assets/alpinejs.js"></script>
+  </head>
+  <body class="bg-[#f5f5f5]">
+    <header class="relative shadow-lg h-20 left-0 w-full z-[100] bg-white" x-data="{ isOpen: false }">
+      <div class="w-[95%] max-w-[90%] mx-auto flex justify-between items-center h-full">
+        <a href="./index.html">
+          <img src="./assets/logo.png" alt="logo" class="h-[45px]" />
+        </a>
+        <div class="flex items-center gap-2 sm:gap-4">
+          <a href="./index.html" class="size-8 sm:size-10 border-[0.67px] border-[#05252433] rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-neutral-100">
+            <img src="./assets/icon2.png" alt="" class="w-4 sm:w-5" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="bg-[#f5f5f5] h-screen relative">
+      <img src="./assets/img2.png" alt="" class="absolute z-[0] -top-10 h-[100%] right-0 object-cover" />
+      <div class="w-[95%] max-w-[90%] mx-auto">
+        <div class="w-full lg:w-[55%] relative z-1 space-y-[30px] py-[30px]">
+          <div class="flex items-center gap-3.5">
+            <h3 class="text-base sm:text-xl md:text-2xl line-height-[32px] font-medium">Hydrogen Generator Learning</h3>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            x-data="{ 
+                items: [
+                {
+                  title: 'Hydrogen Basics',
+                  content: [
+                    { text: 'Introduction to Hydrogen', url: 'javascript:void(0)' },
+                    { text: 'Hydrogen as Fuel', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Categories of Hydrogen based on production',
+                  content: [
+                    { text: 'Grey Hydrogen', url: 'javascript:void(0)' },
+                    { text: 'Blue Hydrogen', url: 'javascript:void(0)' },
+                    { text: 'Green Hydrogen', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Safety', 
+                  content: [
+                    { text: 'Flammability and Explosivity', url: 'javascript:void(0)' },
+                    { text: 'Leakage and Detection', url: 'javascript:void(0)' },
+                    { text: 'Material Compatibility', url: 'javascript:void(0)' },
+                    { text: 'Handling and Transport', url: 'javascript:void(0)' },
+                    { text: 'Education and Awareness', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Generation Methodologies',
+                  content: [
+                    { text: 'Steam Methane Reforming', url: 'javascript:void(0)' },
+                    { text: 'Electrolysis of Water', url: 'javascript:void(0)' },
+                    { text: 'Methanol Reforming', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Generation through Electrolysis',
+                  content: [
+                    { text: 'Alkaline Electrolysis', url: 'javascript:void(0)' },
+                    { text: 'PEM (Proton Exchange Membrane) Electrolysis', url: './PEM-electrolysis.html' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Storage',
+                  content: [
+                    { text: 'Geological Hydrogen Storage', url: 'javascript:void(0)' },
+                    { text: 'Compressed Hydrogen', url: 'javascript:void(0)' },
+                    { text: 'Liquid Hydrogen', url: 'javascript:void(0)' },
+                    { text: 'Material based Hydrogen Storage', url: 'javascript:void(0)' },
+                    { text: 'Hydrogen Storage in Ammonia', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Distribution',
+                  content: [
+                    { text: 'Hydrogen Pipelines', url: 'javascript:void(0)' },
+                    { text: 'Hydrogen Tankers', url: 'javascript:void(0)' },
+                    { text: 'Hydrogen Refueling Stations', url: 'javascript:void(0)' },
+                    { text: 'Ammonia as a Hydrogen Carrier', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Fuel Cell Fundamentals',
+                  content: [
+                    { text: 'Introduction to Fuel Cell', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Categories of Fuel Cell',
+                  content: [
+                    { text: 'Alkaline Fuel Cell', url: 'javascript:void(0)' },
+                    { text: 'PEM (Proton Exchange Membrane) Fuel Cell', url: 'javascript:void(0)' },
+                    { text: 'Microbial Fuel Cell', url: 'javascript:void(0)' },
+                    { text: 'Phosphoric Acid Fuel Cells (PAFC)', url: 'javascript:void(0)' },
+                    { text: 'Molten Carbonate Fuel Cells (MCFC)', url: 'javascript:void(0)' },
+                    { text: 'Solid Oxide Fuel Cells (SOFC)', url: 'javascript:void(0)' },
+                    { text: 'Direct Methanol Fuel Cells (DMFC)', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Advanced Hydrogen Fuel Cell Experiments',
+                  content: [
+                    { text: 'Test the fuel cell at different load condition', url: 'javascript:void(0)' },
+                    { text: 'Study of IV characteristics of fuel cell', url: 'javascript:void(0)' },
+                    { text: 'Study of the Measurement of Fuel Cell Efficiency', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen industrial Application',
+                  content: [
+                    { text: 'Ammonia Production', url: 'javascript:void(0)' },
+                    { text: 'Methanol Production', url: 'javascript:void(0)' },
+                    { text: 'Steelmaking', url: 'javascript:void(0)' },
+                    { text: 'Concrete Production', url: 'javascript:void(0)' },
+                    { text: 'Oil Refining', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Combustion Engine',
+                  content: [
+                    { text: '', url: 'javascript:void(0)' },
+                    { text: '', url: 'javascript:void(0)' }
+                  ]
+                },
+                {
+                  title: 'Hydrogen Mobility and Transportation Applications',
+                  content: [
+                    { text: 'Fuel Cell Buses', url: 'javascript:void(0)' },
+                    { text: 'Material Handling', url: 'javascript:void(0)' },
+                    { text: 'Mining trucks', url: 'javascript:void(0)' },
+                    { text: 'Aviation', url: 'javascript:void(0)' },
+                    { text: 'Rail Transportation', url: 'javascript:void(0)' },
+                    { text: 'Marine Transportation', url: 'javascript:void(0)' }
+                  ]
+                }
+              ],
+            activeItem: null,
+            init() {
+              document.addEventListener('click', (e) => {
+                // Check if click is outside the accordion container
+                if (!this.$el.contains(e.target)) {
+                  this.activeItem = null;
+                }
+              })
+            }
+          }"
+          >
+            <template x-for="(item, index) in items" :key="index">
+              <div class="border-[1px] border-[#DADADA] bg-white rounded-[10px] p-[15px] flex items-center justify-between relative cursor-pointer" :class="{'rounded-b-none': activeItem === index}" @click="activeItem === index ? activeItem = null : activeItem = index">
+                <h2 class="text-base line-height-[20px] font-medium" x-text="item.title"></h2>
+                <div class="size-[30px] bg-[#0177fb] shrink-0 rounded-full flex justify-center items-center">
+                  <img src="./assets/icon6.png" alt="" class="transition-all duration-700" :class="{'rotate-180': activeItem === index}" />
+                </div>
+                <div class="absolute top-full -left-[1px] -right-[1px] bg-[#f5f5f5] border-[1px] border-[#DADADA] rounded-b-[10px] bg-white p-[15px] z-[1]" x-show="activeItem === index" x-transition>
+                  <template x-for="(paragraph, pIndex) in item.content" :key="pIndex">
+                    <a :href="paragraph.url" class="block mb-4 last:mb-0 hover:text-[#0177fb]" x-text="paragraph.text"></a>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
